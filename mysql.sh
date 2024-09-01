@@ -47,8 +47,8 @@ VALIDATE $? "Started MySQL server"
 mysql -h mysql.ags81.online -u root  -pexpenseapp@1 -e 'show databases;' | tee -a $LOG_FILE
 if [$? -ne 0 ]
 then 
-    echo "mysql root password is not se yet, setting now" &>>log_file
-    mysql_secure_installation --set-root-pass ExpenseApp@1
+    echo "mysql root password is not se yet, setting now" &>>LOG_FILE
+    mysql_secure_installation --set-root-pass expenseapp@1
     VALIDATE $? "Setting UP root password"
 else
     echo -e "MySQL root password is already setup...$Y SKIPPING $N" | tee -a $LOG_FILE
