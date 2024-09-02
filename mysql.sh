@@ -45,7 +45,7 @@ systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "Started MySQL server"
 
 mysql -h mysql.ags81.online -u root  -pexpenseapp@1 -e 'show databases;' | tee -a $LOG_FILE
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then 
     echo "mysql root password is not se yet, setting now" &>>LOG_FILE
     mysql_secure_installation --set-root-pass expenseapp@1
