@@ -43,5 +43,14 @@ VALIDATE $? " enable nodejs:20 "
 dnf install nodejs -y &>>$LOG_FILE
 VALIDATE $? " installing nodejs "
 
-useradd expense &>>$LOG_FILE
-VALIDATE $? " creating expense user "
+id expense &>>$LOG_FILE
+if [ $? -ne 0 ]
+then
+   echo " create user for nodejs"
+   useradd expense &>>$LOG_FILE
+   VALIDATE $? " creating expense user "
+
+else
+   echo " user expense is already created "
+
+fi
