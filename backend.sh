@@ -78,3 +78,7 @@ VALIDATE $? "Schema loading"
 systemctl daemon-reload &>>$LOG_FILE
 VALIDATE $? "Daemon reload"
 echo " until this the program is ok "
+
+systemctl enable backend &>>$LOG_FILE
+VALIDATE $? "Enabled backend"
+
