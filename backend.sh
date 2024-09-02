@@ -54,3 +54,13 @@ else
    echo " user expense is already created "
 
 fi
+
+mkdir -p /app
+VALIDATE $? " creating directory "
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE
+VALIDATE $? " download backend application code "
+
+cd /app
+unzip /tmp/backend.zip &>>$LOG_FILE
+ALIDATE $? "Extracting backend application code"
