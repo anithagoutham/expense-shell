@@ -80,8 +80,7 @@ systemctl daemon-reload &>>$LOG_FILE
 VALIDATE $? "Daemon reload"
 echo " until this the program is ok "
 
-systemctl enable backend 
-
+system restart backend
 echo " until this the program is ok "
 
 
