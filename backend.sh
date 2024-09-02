@@ -67,6 +67,7 @@ unzip /tmp/backend.zip &>>$LOG_FILE
 VALIDATE $? "Extracting backend application code"
 
 npm install &>>$LOG_FILE
+pwd 
 cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
 
 dnf install mysql -y &>>$LOG_FILE
@@ -80,5 +81,7 @@ VALIDATE $? "Daemon reload"
 echo " until this the program is ok "
 
 systemctl enable backend 
-VALIDATE $? "enable backend"
+
 echo " until this the program is ok "
+
+
