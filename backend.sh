@@ -71,6 +71,7 @@ cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.serv
 
 dnf install mysql -y &>>$LOG_FILE
 VALIDATE $? "Installing MySQL Client"
+echo " until this the program is ok "
 
 mysql -h mysql.ags81.online -uroot -pexpenseapp@1 < /app/schema/backend.sql &>>$LOG_FILE
 VALIDATE $? "Schema loading"
