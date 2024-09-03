@@ -84,6 +84,4 @@ systemctl enable backend &>>$LOG_FILE
 VALIDATE $? "enable backend"
 echo " until this the program is ok "
 
-systemctl restart backend &>>$LOG_FILE
-VALIDATE $? "restart backend"
-echo " until this the program is ok "
+
